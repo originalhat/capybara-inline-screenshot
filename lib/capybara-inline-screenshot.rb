@@ -22,7 +22,9 @@ module CapybaraInlineScreenshot
   end
 
   def self.artifact_escape_code_for_image(path)
+    puts "#### artifact_escape_code_for_image"
     relative_path = path.sub(/\A#{base_artifact_dir}\/?/, '')
+    puts "#### relative_path #{relative_path}"
     "\e]1338;url=artifact://#{relative_path}\a"
   end
 
